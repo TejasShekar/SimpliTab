@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App flex-center flex-col text-center">
-      <div>{user === null ? <UserOnBoarding /> : <HomePage />}</div>
+      {user === null ? <UserOnBoarding /> : <HomePage />}
     </div>
   );
 }
