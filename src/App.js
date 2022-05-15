@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const user = localStorage.getItem("p8extension");
     setUser(user);
-  });
+  }, []);
 
   return (
     <div className="App flex-center flex-col text-center">
