@@ -8,8 +8,7 @@ export const UserOnBoarding = () => {
     }
     if (e.key === "Enter" && e.target.value !== "") {
       localStorage.setItem("p8extension", e.target.value);
-      window.location.reload(false);
-      e.target.value = "";
+      window.location.reload();
     }
   };
 
