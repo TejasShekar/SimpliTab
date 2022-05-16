@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export const MainFocus = () => {
   const [focus, setFocus] = useState(null);
   const [checked, setChecked] = useState(false);
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(true);
 
   const handleFocusInput = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
