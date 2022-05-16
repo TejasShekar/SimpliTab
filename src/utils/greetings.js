@@ -19,17 +19,17 @@ export const getGreetings = (hour) => {
     case 19:
     case 20:
       return "Good Evening";
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
     case 21:
     case 22:
     case 23:
     case 24:
       return "Good Night";
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
     default:
-      return "Good Day";
+      return "Hello";
   }
 };

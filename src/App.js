@@ -12,7 +12,7 @@ function App() {
   });
 
   return (
-    <div className="App flex-center text-center">
+    <div className="App flex-center flex-col text-center">
       {user === null ? <UserOnBoarding /> : <HomePage />}
     </div>
   );
