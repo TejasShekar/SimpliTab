@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { useUserInfo } from "../context/user-context";
 
 export const UserOnBoarding = () => {
   const [error, setError] = useState(false);
+  const { setUser } = useUserInfo();
+
   const userHandler = (e) => {
     if (e.target.value === "") {
       setError(true);
     }
     if (e.key === "Enter" && e.target.value !== "") {
+      setUser(e.target.value);
       localStorage.setItem("p8extension", e.target.value);
-      window.location.reload();
     }
   };
 
