@@ -1,4 +1,5 @@
 import { GreetUserWithTime } from "./GreetUserWithTime";
+import { MainFocus } from "./MainFocus";
 import { Weather } from "./Weather";
 
 export const HomePage = () => {
@@ -6,6 +7,8 @@ export const HomePage = () => {
     <>
       <Weather />
       <GreetUserWithTime />
+      <MainFocus />
+      {/* Quote */}
     </>
   );
 };
