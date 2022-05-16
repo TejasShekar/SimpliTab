@@ -19,10 +19,10 @@ export const GreetUserWithTime = () => {
 
   return (
     <div>
-      <h1 className="time">{time.slice(0, 5)}</h1>
-      <h2 className="p-1">
+      <h1>{time.slice(0, 5)}</h1>
+      <p className="greeting px-2 py-1 text-center">
         {greetings}, {user}
-      </h2>
+      </p>
     </div>
   );
 };

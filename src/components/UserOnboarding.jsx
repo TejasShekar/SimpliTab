@@ -15,6 +15,8 @@ export const UserOnBoarding = () => {
     }
   };
 
+  const clickHandler = (e) => {};
+
   return (
     <>
       <h2 className="p-2">Hello, what's your name?</h2>
@@ -24,6 +26,7 @@ export const UserOnBoarding = () => {
         onKeyPress={userHandler}
         onChange={() => setError(false)}
       />
+
       {error && (
         <p className="pt-2 error text-center">Please enter a valid input</p>
       )}
