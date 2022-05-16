@@ -3,12 +3,25 @@ import { useState, useEffect } from "react";
 export const MainFocus = () => {
   const [focus, setFocus] = useState(null);
   const [checked, setChecked] = useState(false);
+  const [editMode, setEditMode] = useState(false);
 
   const handleFocusInput = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
       setFocus(e.target.value);
       localStorage.setItem("p8focus", e.target.value);
+      setEditMode(false);
     }
+  };
+
+  const editFocus = () => {
+    localStorage.removeItem("p8focus");
+    setEditMode(true);
+  };
+
+  const deleteFocus = () => {
+    localStorage.removeItem("p8focus");
+    setEditMode(true);
+    setFocus(null);
   };
 
   useEffect(() => {
@@ -18,7 +31,7 @@ export const MainFocus = () => {
 
   return (
     <>
-      {focus !== null ? (
+      {!editMode ? (
         <>
           <div className="flex-center focus mx-2">
             <input
@@ -38,6 +51,16 @@ export const MainFocus = () => {
                 My main focus is to {focus}
               </p>
             </label>
+            {!checked && (
+              <button className="focus-edit" onClick={editFocus}>
+                <i className="fas fa-pen"></i>
+              </button>
+            )}
+            {!checked && (
+              <button className="focus-delete" onClick={deleteFocus}>
+                <i className="fas fa-trash-alt"></i>
+              </button>
+            )}
           </div>
           {checked ? (
             <p className="pt-2">Great Job !</p>
@@ -51,6 +74,7 @@ export const MainFocus = () => {
             What is your main focus today?
           </p>
           <input
+            defaultValue={focus}
             type="text"
             className="userInput text-center"
             onKeyDown={handleFocusInput}
