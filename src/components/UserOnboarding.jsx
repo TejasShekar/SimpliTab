@@ -15,8 +15,6 @@ export const UserOnBoarding = () => {
     }
   };
 
-  const clickHandler = (e) => {};
-
   return (
     <>
       <h2 className="p-2">Hello, what's your name?</h2>
