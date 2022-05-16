@@ -20,7 +20,7 @@ export const GreetUserWithTime = () => {
   return (
     <div>
       <h1 className="time">{time.slice(0, 5)}</h1>
-      <h2>
+      <h2 className="p-1">
         {greetings}, {user}
       </h2>
     </div>
