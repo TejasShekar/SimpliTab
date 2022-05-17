@@ -10,8 +10,22 @@ body,
   line-height: normal;
 }
 
+.screen {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+}
+
 .App {
-  background: url("./asset/bg-img.jpg") no-repeat center center fixed;
+  position: relative;
+  z-index: 2;
+}
+
+.bg {
+  background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper")
+    no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -90,6 +104,11 @@ p {
 
 .focus-delete:hover {
   transform: scale(1.3);
+}
+
+.quote {
+  position: fixed;
+  bottom: 1rem;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
