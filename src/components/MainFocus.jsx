@@ -22,6 +22,7 @@ export const MainFocus = () => {
     localStorage.removeItem("p8focus");
     setEditMode(true);
     setFocus(null);
+    setChecked(false);
   };
 
   useEffect(() => {
