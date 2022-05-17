@@ -14,8 +14,9 @@
 
 <hr>
 
-You can find the mozilla add-on [here](https://addons.mozilla.org/en-US/firefox/addon/simplitab/)
+<p align="center">You can find the mozilla add-on <a href="https://addons.mozilla.org/en-US/firefox/addon/simplitab/" target="_blank">here</a></p>
+
 
 <p align="center">OR</p>
 
-You can download the zip file from [here](https://addons.mozilla.org/firefox/downloads/file/3950124/simplitab-1.0.1.zip) and manually load it in your browser extensions, if you prefer that way !
+<p align="center">You can download the zip file from <a href="https://addons.mozilla.org/firefox/downloads/file/3950124/simplitab-1.0.1.zip" target="_blank">here</a> and manually load it in your browser extensions, if you prefer that way!</p>
