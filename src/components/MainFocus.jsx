@@ -25,8 +25,10 @@ export const MainFocus = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("p8focus") !== null)
+    if (localStorage.getItem("p8focus") !== null) {
       setFocus(localStorage.getItem("p8focus"));
+      setEditMode(false);
+    }
   }, []);
 
   return (
