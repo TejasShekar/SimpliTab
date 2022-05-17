@@ -24,6 +24,7 @@ export const UserOnBoarding = () => {
         onKeyPress={userHandler}
         onChange={() => setError(false)}
       />
+
       {error && (
         <p className="pt-2 error text-center">Please enter a valid input</p>
       )}
