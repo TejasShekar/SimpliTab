@@ -56,11 +56,9 @@ export const MainFocus = () => {
                 <i className="fas fa-pen"></i>
               </button>
             )}
-            {!checked && (
-              <button className="focus-delete" onClick={deleteFocus}>
-                <i className="fas fa-trash-alt"></i>
-              </button>
-            )}
+            <button className="focus-delete" onClick={deleteFocus}>
+              <i className="fas fa-trash-alt"></i>
+            </button>
           </div>
           {checked ? (
             <p className="pt-2">Great Job !</p>
