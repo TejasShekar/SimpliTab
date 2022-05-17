@@ -5,13 +5,13 @@ body,
   width: 100vw;
   padding: 0;
   margin: 0;
-  color: white;
   font-size: 100%;
   line-height: normal;
+  color: white;
 }
 
 .screen {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -24,7 +24,7 @@ body,
 }
 
 .bg {
-  background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper")
+  background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper,forest")
     no-repeat center center fixed;
   background-size: cover;
 }
@@ -51,7 +51,7 @@ p {
 .userInput,
 .userInput:active,
 .userInput:focus {
-  color: white;
+  color: var(--text-color);
   font-size: 2rem;
   background: transparent;
   border: none;
@@ -61,7 +61,7 @@ p {
 }
 
 .error {
-  color: rgb(254, 73, 73);
+  color: var(--red);
 }
 
 .weather-icon {
@@ -86,7 +86,7 @@ p {
 
 .focus-edit {
   background: transparent;
-  color: gold;
+  color: var(--yellow);
   font-size: 1.5rem;
   margin: auto 1rem;
 }
@@ -97,7 +97,7 @@ p {
 
 .focus-delete {
   background: transparent;
-  color: red;
+  color: var(--red);
   font-size: 1.5rem;
   margin: auto 1rem;
 }
