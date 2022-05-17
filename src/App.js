@@ -12,8 +12,11 @@ function App() {
   });
 
   return (
-    <div className="App flex-center flex-col text-center">
-      {user === null ? <UserOnBoarding /> : <HomePage />}
+    <div className="bg">
+      <div className="screen"></div>
+      <div className="App flex-center flex-col text-center">
+        {user === null ? <UserOnBoarding /> : <HomePage />}
+      </div>
     </div>
   );
 }

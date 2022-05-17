@@ -22,11 +22,14 @@ export const MainFocus = () => {
     localStorage.removeItem("p8focus");
     setEditMode(true);
     setFocus(null);
+    setChecked(false);
   };
 
   useEffect(() => {
-    if (localStorage.getItem("p8focus") !== null)
+    if (localStorage.getItem("p8focus") !== null) {
       setFocus(localStorage.getItem("p8focus"));
+      setEditMode(false);
+    }
   }, []);
 
   return (
@@ -56,11 +59,9 @@ export const MainFocus = () => {
                 <i className="fas fa-pen"></i>
               </button>
             )}
-            {!checked && (
-              <button className="focus-delete" onClick={deleteFocus}>
-                <i className="fas fa-trash-alt"></i>
-              </button>
-            )}
+            <button className="focus-delete" onClick={deleteFocus}>
+              <i className="fas fa-trash-alt"></i>
+            </button>
           </div>
           {checked ? (
             <p className="pt-2">Great Job !</p>
