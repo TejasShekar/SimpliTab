@@ -10,6 +10,11 @@ body,
   color: white;
 }
 
+li:hover {
+  font-weight: normal;
+  cursor: initial;
+}
+
 .screen {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100vw;
@@ -48,9 +53,9 @@ p {
   font-size: 3rem;
 }
 
-.userInput,
-.userInput:active,
-.userInput:focus {
+.user-input,
+.user-input:active,
+.user-input:focus {
   color: var(--text-color);
   font-size: 2rem;
   background: transparent;
@@ -111,7 +116,70 @@ p {
   bottom: 1rem;
 }
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
+.toggle-todo {
+  background-color: transparent;
+  color: rgb(201, 201, 201);
+  font-size: 1rem;
+}
+
+.toggle-todo:hover {
+  color: rgb(255, 255, 255);
+}
+
+.todo-container {
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  align-items: flex-end;
+}
+
+.todo-input {
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.todo-list {
+  background-color: rgb(0, 0, 0, 0.7);
+  border-radius: 10px;
+  width: 20rem;
+  height: auto;
+  max-height: 30rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.todo {
+  align-items: baseline;
+  margin: 0 0 8px 0;
+  word-break: break-word;
+  text-align: left;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.todo-delete {
+  background: transparent;
+  color: var(--red);
+  /* font-size: 1.5rem; */
+  margin: auto 1rem;
+}
+
+ol::-webkit-scrollbar {
+  background-color: rgb(0, 0, 0, 0.4);
+  height: 13px;
+  width: 13px;
+}
+
+ol::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255, 0.4);
+  border-radius: 1rem;
+}
+
+/* No need of media queries for a desktop browser extension */
+/* @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
   html,
   body,
   .App {
@@ -122,4 +190,4 @@ p {
     height: auto;
     width: auto;
   }
-}
+} */
