@@ -52,7 +52,7 @@ export const ToDo = () => {
                   />
                   <label htmlFor={`todo-${index}`}>
                     <span
-                      className="m-sm "
+                      className="m-sm"
                       style={
                         Boolean(checked)
                           ? { textDecoration: "line-through", color: "grey" }
@@ -63,21 +63,22 @@ export const ToDo = () => {
                     </span>
                   </label>
                 </div>
-                <button
-                  className="todo-delete"
-                  onClick={() => removeToDo(id)}
-                  style={
-                    Boolean(checked)
-                      ? { display: "initial" }
-                      : { display: "hidden" }
-                  }
-                >
-                  <i className="fas fa-trash-alt"></i>
-                </button>
+                <div>
+                  {Boolean(checked) && (
+                    <button
+                      className="todo-delete"
+                      onClick={() => removeToDo(id)}
+                    >
+                      <i className="fas fa-trash-alt"></i>
+                    </button>
+                  )}
+                </div>
               </li>
             ))
           ) : (
-            <p style={{ textAlign: "center" }}>Your To-Do is empty</p>
+            <p style={{ textAlign: "center", userSelect: "none" }}>
+              Your To-Do is empty
+            </p>
           )}
         </ol>
         <input

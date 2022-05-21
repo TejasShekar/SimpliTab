@@ -36,6 +36,7 @@ li:hover {
 
 h1 {
   font-size: 8rem;
+  user-select: none;
 }
 
 h2 {
@@ -51,6 +52,7 @@ p {
 
 .greeting {
   font-size: 3rem;
+  user-select: none;
 }
 
 .user-input,
@@ -89,22 +91,29 @@ p {
   width: 1.5rem;
 }
 
-.focus-edit {
+.focus-edit,
+.todo-edit {
   background: transparent;
   color: var(--yellow);
-  font-size: 1.5rem;
   margin: auto 1rem;
+}
+.focus-edit {
+  font-size: 1.5rem;
 }
 
 .focus-edit:hover {
   transform: scale(1.3);
 }
 
-.focus-delete {
+.focus-delete,
+.todo-delete {
   background: transparent;
   color: var(--red);
-  font-size: 1.5rem;
   margin: auto 1rem;
+}
+
+.focus-delete {
+  font-size: 1.5rem;
 }
 
 .focus-delete:hover {
@@ -158,12 +167,6 @@ p {
   text-align: left;
   align-items: baseline;
   justify-content: space-between;
-}
-
-.todo-delete {
-  background: transparent;
-  color: var(--red);
-  margin: auto 1rem;
 }
 
 ol::-webkit-scrollbar {

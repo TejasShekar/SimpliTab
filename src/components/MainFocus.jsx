@@ -3,25 +3,25 @@ import { useState, useEffect } from "react";
 export const MainFocus = () => {
   const [focus, setFocus] = useState(null);
   const [isChecked, setChecked] = useState(false);
-  const [editMode, setEditMode] = useState(true);
+  const [focusEdit, setFocusEdit] = useState(true);
 
   const handleFocusInput = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
       setFocus(e.target.value);
       localStorage.setItem("SimpliTab-focus", e.target.value);
-      setEditMode(false);
+      setFocusEdit(false);
     }
   };
 
   const editFocus = () => {
     localStorage.removeItem("SimpliTab-focus");
-    setEditMode(true);
+    setFocusEdit(true);
   };
 
   const deleteFocus = () => {
     localStorage.removeItem("SimpliTab-focus");
     localStorage.removeItem("isChecked");
-    setEditMode(true);
+    setFocusEdit(true);
     setFocus(null);
     setChecked(false);
   };
@@ -30,13 +30,13 @@ export const MainFocus = () => {
     setChecked(JSON.parse(localStorage.getItem("isChecked")) || isChecked);
     if (localStorage.getItem("SimpliTab-focus") !== null) {
       setFocus(localStorage.getItem("SimpliTab-focus"));
-      setEditMode(false);
+      setFocusEdit(false);
     }
   }, [isChecked]);
 
   return (
     <>
-      {editMode ? (
+      {focusEdit ? (
         <>
           <p className="focus-text pt-2 text-center">
             What is your main focus today?
