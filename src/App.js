@@ -7,7 +7,7 @@ import { useUserInfo } from "./context/user-context";
 function App() {
   const { user, setUser } = useUserInfo();
   useEffect(() => {
-    const user = localStorage.getItem("p8extension");
+    const user = localStorage.getItem("SimpliTab-user");
     setUser(user);
   });
 

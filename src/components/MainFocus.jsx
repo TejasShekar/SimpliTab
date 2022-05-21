@@ -8,18 +8,18 @@ export const MainFocus = () => {
   const handleFocusInput = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
       setFocus(e.target.value);
-      localStorage.setItem("p8focus", e.target.value);
+      localStorage.setItem("SimpliTab-focus", e.target.value);
       setEditMode(false);
     }
   };
 
   const editFocus = () => {
-    localStorage.removeItem("p8focus");
+    localStorage.removeItem("SimpliTab-focus");
     setEditMode(true);
   };
 
   const deleteFocus = () => {
-    localStorage.removeItem("p8focus");
+    localStorage.removeItem("SimpliTab-focus");
     localStorage.removeItem("isChecked");
     setEditMode(true);
     setFocus(null);
@@ -28,8 +28,8 @@ export const MainFocus = () => {
 
   useEffect(() => {
     setChecked(JSON.parse(localStorage.getItem("isChecked")) || isChecked);
-    if (localStorage.getItem("p8focus") !== null) {
-      setFocus(localStorage.getItem("p8focus"));
+    if (localStorage.getItem("SimpliTab-focus") !== null) {
+      setFocus(localStorage.getItem("SimpliTab-focus"));
       setEditMode(false);
     }
   }, [isChecked]);
@@ -44,7 +44,7 @@ export const MainFocus = () => {
           <input
             defaultValue={focus}
             type="text"
-            className="userInput text-center"
+            className="user-input text-center"
             onKeyDown={handleFocusInput}
           />
         </>
