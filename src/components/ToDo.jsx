@@ -1,33 +1,33 @@
 import { useState } from "react";
-import { v4 as uuid } from "uuid";
+import { useTodo } from "../context/todo-context";
 
 export const ToDo = () => {
   const [isTodoOpen, setTodoOpen] = useState(false);
   const [todo, setTodo] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const { todoList, todoListDispatch } = useTodo();
 
   const addToDo = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
-      setTodoList((prev) => [
-        ...prev,
-        { id: uuid(), todo: e.target.value, checked: false },
-      ]);
+      todoListDispatch({
+        type: "ADD_TODO",
+        payload: todo,
+      });
       setTodo("");
     }
   };
 
-  const checkThisToDo = (id) => {
-    const updatedTodoList = todoList.reduce((arr, obj) => {
-      return obj.id === id
-        ? [...arr, { ...obj, checked: !obj.checked }]
-        : [...arr, obj];
-    }, []);
-    setTodoList(updatedTodoList);
+  const toggleTodoChecked = (id) => {
+    todoListDispatch({
+      type: "TOGGLE_TODO_CHECKED",
+      payload: id,
+    });
   };
 
   const removeToDo = (id) => {
-    const updatedTodoList = todoList.filter((obj) => obj.id !== id);
-    setTodoList(updatedTodoList);
+    todoListDispatch({
+      type: "REMOVE_TODO",
+      payload: id,
+    });
   };
 
   return (
@@ -47,7 +47,7 @@ export const ToDo = () => {
                     type="checkbox"
                     id={`todo-${index}`}
                     onChange={() => {
-                      checkThisToDo(id);
+                      toggleTodoChecked(id);
                     }}
                   />
                   <label htmlFor={`todo-${index}`}>
@@ -85,7 +85,7 @@ export const ToDo = () => {
           type="text"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
-          onKeyDown={addToDo}
+          onKeyDown={(e) => addToDo(e)}
           placeholder="Type your ToDo and hit Enter"
         />
       </div>

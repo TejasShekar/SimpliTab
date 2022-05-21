@@ -163,7 +163,6 @@ p {
 .todo-delete {
   background: transparent;
   color: var(--red);
-  /* font-size: 1.5rem; */
   margin: auto 1rem;
 }
 
