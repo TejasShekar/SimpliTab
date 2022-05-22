@@ -81,6 +81,7 @@ p {
 
 .focus-text {
   font-size: 2rem;
+  max-width: 60rem;
 }
 
 .focus {
