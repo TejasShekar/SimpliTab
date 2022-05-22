@@ -11,7 +11,7 @@ export const UserOnBoarding = () => {
     }
     if (e.key === "Enter" && e.target.value !== "") {
       setUser(e.target.value);
-      localStorage.setItem("p8extension", e.target.value);
+      localStorage.setItem("SimpliTab-user", e.target.value);
     }
   };
 
@@ -19,7 +19,7 @@ export const UserOnBoarding = () => {
     <>
       <h2 className="p-2">Hello, what's your name?</h2>
       <input
-        className="userInput text-center"
+        className="user-input text-center"
         type="text"
         onKeyPress={userHandler}
         onChange={() => setError(false)}

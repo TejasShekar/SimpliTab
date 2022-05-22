@@ -3,40 +3,40 @@ import { useState, useEffect } from "react";
 export const MainFocus = () => {
   const [focus, setFocus] = useState(null);
   const [isChecked, setChecked] = useState(false);
-  const [editMode, setEditMode] = useState(true);
+  const [focusEdit, setFocusEdit] = useState(true);
 
   const handleFocusInput = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
       setFocus(e.target.value);
-      localStorage.setItem("p8focus", e.target.value);
-      setEditMode(false);
+      localStorage.setItem("SimpliTab-focus", e.target.value);
+      setFocusEdit(false);
     }
   };
 
   const editFocus = () => {
-    localStorage.removeItem("p8focus");
-    setEditMode(true);
+    localStorage.removeItem("SimpliTab-focus");
+    setFocusEdit(true);
   };
 
   const deleteFocus = () => {
-    localStorage.removeItem("p8focus");
+    localStorage.removeItem("SimpliTab-focus");
     localStorage.removeItem("isChecked");
-    setEditMode(true);
+    setFocusEdit(true);
     setFocus(null);
     setChecked(false);
   };
 
   useEffect(() => {
     setChecked(JSON.parse(localStorage.getItem("isChecked")) || isChecked);
-    if (localStorage.getItem("p8focus") !== null) {
-      setFocus(localStorage.getItem("p8focus"));
-      setEditMode(false);
+    if (localStorage.getItem("SimpliTab-focus") !== null) {
+      setFocus(localStorage.getItem("SimpliTab-focus"));
+      setFocusEdit(false);
     }
   }, [isChecked]);
 
   return (
     <>
-      {editMode ? (
+      {focusEdit ? (
         <>
           <p className="focus-text pt-2 text-center">
             What is your main focus today?
@@ -44,7 +44,7 @@ export const MainFocus = () => {
           <input
             defaultValue={focus}
             type="text"
-            className="userInput text-center"
+            className="user-input text-center"
             onKeyDown={handleFocusInput}
           />
         </>
