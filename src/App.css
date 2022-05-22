@@ -99,6 +99,15 @@ p {
   color: var(--yellow);
   margin: auto 1rem;
 }
+
+.todo-edit {
+  display: none;
+}
+
+li:hover .todo-edit {
+  display: initial;
+}
+
 .focus-edit,
 .focus-delete {
   font-size: 1.5rem;
