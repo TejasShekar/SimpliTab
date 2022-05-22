@@ -63,11 +63,7 @@ export const MainFocus = () => {
             <label htmlFor="main-focus">
               <p
                 className="focus-text pl-1 text-center"
-                style={
-                  isChecked
-                    ? { textDecoration: "line-through" }
-                    : { textDecoration: "none" }
-                }
+                style={{ textDecoration: isChecked ? "line-through" : "none" }}
               >
                 My main focus is to {focus}
               </p>

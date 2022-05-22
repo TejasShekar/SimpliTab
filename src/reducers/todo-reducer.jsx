@@ -6,6 +6,8 @@ export const ToDoReducer = (state, { type, payload }) => {
       return [...state, { id: uuid(), todo: payload, checked: false }];
     case "REMOVE_TODO":
       return state.filter((obj) => obj.id !== payload);
+    case "SAVE_TODO":
+      return payload;
     case "TOGGLE_TODO_CHECKED":
       return state.map((obj) =>
         obj.id === payload ? { ...obj, checked: !obj.checked } : obj
