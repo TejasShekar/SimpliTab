@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useUserInfo } from "../context/user-context";
-import { getGreetings } from "../utils/greetings";
+import { useUserInfo } from "context/user-context";
+import { getGreetings } from "utils/greetings";
 
 export const GreetUserWithTime = () => {
   const [time, setTime] = useState("");
