@@ -179,17 +179,3 @@ ol::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255, 0.4);
   border-radius: 1rem;
 }
-
-/* No need of media queries for a desktop browser extension */
-/* @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
-  html,
-  body,
-  .App {
-    font-size: 65%;
-  }
-
-  .focus input {
-    height: auto;
-    width: auto;
-  }
-} */
