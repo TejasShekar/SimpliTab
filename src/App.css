@@ -29,8 +29,9 @@ li:hover {
 }
 
 .bg {
-  background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper,forest")
-    no-repeat center center fixed;
+  /* background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper,forest")
+    no-repeat center center fixed; */
+  background: url("./asset/bg-img.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -80,6 +81,7 @@ p {
 
 .focus-text {
   font-size: 2rem;
+  max-width: 60rem;
 }
 
 .focus {
@@ -97,11 +99,22 @@ p {
   color: var(--yellow);
   margin: auto 1rem;
 }
-.focus-edit {
+
+.todo-edit {
+  display: none;
+}
+
+li:hover .todo-edit {
+  display: initial;
+}
+
+.focus-edit,
+.focus-delete {
   font-size: 1.5rem;
 }
 
-.focus-edit:hover {
+.focus-edit:hover,
+.focus-delete:hover {
   transform: scale(1.3);
 }
 
@@ -112,14 +125,11 @@ p {
   margin: auto 1rem;
 }
 
-.focus-delete {
-  font-size: 1.5rem;
+.todo-save {
+  background: transparent;
+  color: var(--green);
+  margin: auto 1rem;
 }
-
-.focus-delete:hover {
-  transform: scale(1.3);
-}
-
 .quote {
   position: fixed;
   bottom: 1rem;
@@ -161,12 +171,24 @@ p {
 }
 
 .todo {
+  user-select: none;
   align-items: baseline;
   margin: 0 0 8px 0;
   word-break: break-word;
   text-align: left;
   align-items: baseline;
   justify-content: space-between;
+}
+
+.todo-edit-input {
+  height: 10px;
+  font-size: initial;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  border-radius: 0 !important;
 }
 
 ol::-webkit-scrollbar {
@@ -179,17 +201,3 @@ ol::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255, 0.4);
   border-radius: 1rem;
 }
-
-/* No need of media queries for a desktop browser extension */
-/* @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
-  html,
-  body,
-  .App {
-    font-size: 65%;
-  }
-
-  .focus input {
-    height: auto;
-    width: auto;
-  }
-} */

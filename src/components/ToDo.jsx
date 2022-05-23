@@ -1,18 +1,20 @@
 import { useState } from "react";
-import { useTodo } from "../context/todo-context";
+import { useTodo } from "context/todo-context";
 
 export const ToDo = () => {
   const [isTodoOpen, setTodoOpen] = useState(false);
-  const [todo, setTodo] = useState("");
+  const [todoValue, setTodo] = useState("");
+  const [editID, setEditId] = useState("");
+  const [todoEdit, setTodoEdit] = useState(false);
   const { todoList, todoListDispatch } = useTodo();
 
   const addToDo = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
       todoListDispatch({
         type: "ADD_TODO",
-        payload: todo,
+        payload: e.target.value,
       });
-      setTodo("");
+      e.target.value = "";
     }
   };
 
@@ -21,6 +23,28 @@ export const ToDo = () => {
       type: "TOGGLE_TODO_CHECKED",
       payload: id,
     });
+  };
+
+  const editToDo = (id, todo) => {
+    setTodo(todo);
+    setEditId(id);
+    setTodoEdit((prev) => !prev);
+  };
+
+  const saveToDo = (id, todoValue) => {
+    if (todoValue === "") {
+      removeToDo(id);
+      return;
+    }
+    const updatedList = todoList.map((obj) =>
+      obj.id === id ? { ...obj, todo: todoValue } : obj
+    );
+    todoListDispatch({
+      type: "SAVE_TODO",
+      payload: updatedList,
+    });
+    setTodoEdit((prev) => !prev);
+    setTodo("");
   };
 
   const removeToDo = (id) => {
@@ -35,7 +59,7 @@ export const ToDo = () => {
       <div
         className="todo-list flex-col px-1 py-1"
         style={{
-          display: `${isTodoOpen ? "flex" : "none"}`,
+          display: isTodoOpen ? "flex" : "none",
         }}
       >
         <ol className="mb-sm" style={{ overflow: "auto" }}>
@@ -50,8 +74,16 @@ export const ToDo = () => {
                       toggleTodoChecked(id);
                     }}
                   />
-                  <label htmlFor={`todo-${index}`}>
-                    <span
+                  {todoEdit && editID === id ? (
+                    <input
+                      className="todo-edit-input"
+                      type="text"
+                      defaultValue={todo}
+                      onChange={(e) => setTodo(e.target.value)}
+                    />
+                  ) : (
+                    <label
+                      htmlFor={`todo-${index}`}
                       className="m-sm"
                       style={
                         Boolean(checked)
@@ -60,16 +92,30 @@ export const ToDo = () => {
                       }
                     >
                       {todo}
-                    </span>
-                  </label>
+                    </label>
+                  )}
                 </div>
                 <div>
-                  {Boolean(checked) && (
+                  {Boolean(checked) ? (
                     <button
                       className="todo-delete"
                       onClick={() => removeToDo(id)}
                     >
                       <i className="fas fa-trash-alt"></i>
+                    </button>
+                  ) : todoEdit && editID === id ? (
+                    <button
+                      className="todo-save"
+                      onClick={() => saveToDo(id, todoValue)}
+                    >
+                      <i className="fas fa-check"></i>
+                    </button>
+                  ) : (
+                    <button
+                      className="todo-edit"
+                      onClick={() => editToDo(id, todo)}
+                    >
+                      <i className="fas fa-pen"></i>
                     </button>
                   )}
                 </div>
@@ -84,8 +130,6 @@ export const ToDo = () => {
         <input
           className="todo-input"
           type="text"
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
           onKeyDown={(e) => addToDo(e)}
           placeholder="Type your ToDo and hit Enter"
         />

@@ -1,9 +1,11 @@
-import { TodoProvider } from "../context/todo-context";
-import { GreetUserWithTime } from "./GreetUserWithTime";
-import { MainFocus } from "./MainFocus";
-import { Quotes } from "./Quotes";
-import { ToDo } from "./ToDo";
-import { Weather } from "./Weather";
+import { TodoProvider } from "context/todo-context";
+import {
+  GreetUserWithTime,
+  MainFocus,
+  Quotes,
+  ToDo,
+  Weather,
+} from "components";
 
 export const HomePage = () => {
   return (

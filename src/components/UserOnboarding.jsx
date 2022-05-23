@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useUserInfo } from "../context/user-context";
+import { useUserInfo } from "context/user-context";
 
 export const UserOnBoarding = () => {
   const [error, setError] = useState(false);
