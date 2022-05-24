@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "SimpliTab",
   "author": "Tejas Shekar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Focus on your main tasks with Time and weather widgets",
   "icons": {
     "16": "/icons/icon-16.png",
