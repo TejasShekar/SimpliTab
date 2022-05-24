@@ -19,4 +19,4 @@
 
 <p align="center">OR</p>
 
-<p align="center">You can download the zip file from <a href="https://addons.mozilla.org/firefox/downloads/file/3950124/simplitab-1.0.1.zip">here</a> and manually load it in your browser extensions, if you prefer that way!</p>
+<p align="center">You can download the zip file from <a href="https://addons.mozilla.org/firefox/downloads/file/3953431/simplitab-1.0.2.zip">here</a> and manually load it in your browser extensions, if you prefer that way!</p>
