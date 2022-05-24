@@ -29,9 +29,9 @@ li:hover {
 }
 
 .bg {
-  /* background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper,forest")
-    no-repeat center center fixed; */
-  background: url("./asset/bg-img.jpg") no-repeat center center fixed;
+  background: url("https://source.unsplash.com/random/1920x888/?dark%20wallpaper,forest")
+    no-repeat center center fixed;
+  /* background: url("./asset/bg-img.jpg") no-repeat center center fixed; */
   background-size: cover;
 }
 
@@ -85,7 +85,7 @@ p {
 }
 
 .focus {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .focus input {
@@ -200,4 +200,39 @@ ol::-webkit-scrollbar {
 ol::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255, 0.4);
   border-radius: 1rem;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 812px) {
+  html,
+  body,
+  .App {
+    font-size: 65%;
+  }
+
+  .user-input,
+  .user-input:active,
+  .user-input:focus {
+    margin-bottom: 15rem;
+  }
+
+  .todo-container {
+    bottom: 12rem;
+    right: 2rem;
+  }
+
+  .toggle-todo {
+    font-size: 1.5rem;
+  }
+
+  .m-sm {
+    font-size: 1.7rem;
+  }
+
+  .todo-edit {
+    display: initial;
+  }
+
+  .todo-list {
+    width: fit-content;
+  }
 }
